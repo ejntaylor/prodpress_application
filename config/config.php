@@ -2,7 +2,7 @@
 
 // constants
 
-define("APP_ROOT", "/mvc");
+define("APP_ROOT", "/mvc/");
 
 
 
@@ -16,10 +16,10 @@ function mvc_api_routes() {
 
 	//   /home
 
-	if ($slugs[1] == 'welcome') {
+	if ($slugs[1] == 'custom') {
 
 		// load the events controller
-		mvc_app('welcome');
+		mvc_app('custom');
 
 		exit();
 	}
