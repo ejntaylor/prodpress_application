@@ -37,6 +37,10 @@ gulp.task('scripts', function() {
         // Vue.js
         basePaths.dev + 'js/vue/vue.js',
 
+        // MVC App JS
+        basePaths.js + 'app.js',
+
+
     ];
     gulp.src(scripts)
         .pipe(concat('mvc_scripts.min.js'))

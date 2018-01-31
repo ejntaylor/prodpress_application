@@ -10796,3 +10796,5 @@ Vue$3.compile = compileToFunctions;
 return Vue$3;
 
 })));
+
+console.log('👋 MVC APP  👉 Head to ' + location.protocol + "//" +  window.location.hostname + '/mvc-welcome/ for an introduction to your MVC application.');

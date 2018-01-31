@@ -23,16 +23,12 @@ class examples extends mvc_app_controller {
 			$this->load_view('wrappers/wrapper_end');
 			get_footer();
 
-			exit();
-
 		}
 
 
 	function test() {
 
-		echo 'Test Function';
-
-		exit();
+		echo 'Test plain text function';
 
 	}
 
@@ -53,19 +49,16 @@ class examples extends mvc_app_controller {
 		$this->load_view('wrappers/wrapper_end');
 		get_footer();
 
-		exit();
-
-
-
 	}
 
-function custom() {
-	// load the view
-	get_header();
-	$this->load_view('wrappers/wrapper_start');
-	$this->load_view('examples/custom');
-	$this->load_view('wrappers/wrapper_end');
-	get_footer();
-}
+
+	function custom() {
+		// load the view
+		get_header();
+		$this->load_view('wrappers/wrapper_start');
+		$this->load_view('examples/custom');
+		$this->load_view('wrappers/wrapper_end');
+		get_footer();
+	}
 
 }
