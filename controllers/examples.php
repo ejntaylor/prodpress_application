@@ -19,7 +19,7 @@ class examples extends mvc_app_controller {
 			// output
 			get_header();
 			$this->load_view('wrappers/wrapper_start');
-			$this->load_view('examples/start', $data);
+			$this->load_view('examples/welcome', $data);
 			$this->load_view('wrappers/wrapper_end');
 			get_footer();
 
