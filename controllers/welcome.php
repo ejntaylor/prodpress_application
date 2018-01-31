@@ -42,10 +42,17 @@ class welcome extends mvc_app_controller {
 
 	function vue() {
 
+		// set variables
+		$data['variable_one'] = 1;
+		$data['variable_two'] = 2;
+		$data['welcome_message'] = 'Welcome to the MVC vue.js application';
+		$data['welcome_description'] = 'You can use a variable direct from the data object too.';
+
+
 		//load the view
 		get_header();
 		$this->load_view('wrappers/wrapper_start');
-		$this->load_view('vue');
+		$this->load_view('vue', $data);
 		$this->load_view('wrappers/wrapper_end');
 		get_footer();
 

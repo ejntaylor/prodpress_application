@@ -14,6 +14,7 @@ class start extends mvc_app_controller {
 
 			// set vars
 			$data['domain'] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[SERVER_NAME]";
+			$data['app_root'] = MVC_PATH;
 
 			$this->load_view('wrappers/wrapper_start');
 			$this->load_view('start', $data);

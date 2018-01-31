@@ -1,17 +1,26 @@
 
-
 <div id="app">
-	{{ message }}
+	<h2>{{ welcome_message }}</h2>
+	<p>{{ welcome_description }}</p>
 </div>
 
 
-<script src="https://sh2.local/wp-content/mvc_app/js/mvc_scripts.js"></script>
-
 <script>
-	var app = new Vue({
+
+	// get controller vars
+	var data = <?= json_encode($data) ?>
+
+	// create vue instance
+	var vm = new Vue({
 		el: '#app',
-		data: {
-			message: 'Hello Vue!'
-		}
+		data: data
 	})
+
+	// two methods to access data
+	console.dir(data.welcome_message);
+	console.dir(vm.welcome_message);
+
+
+
 </script>
+

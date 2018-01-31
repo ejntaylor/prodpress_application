@@ -38,3 +38,24 @@ function mvc_api_routes() {
 
 }
 add_action( 'init', 'mvc_api_routes' );
+
+
+
+
+// enqueue mvc script
+
+function mvc_enqueue_scripts() {
+
+	// set debug version
+	if (true == WP_DEBUG) {
+		$date = new DateTime();
+		$enqueue_ver = $date->getTimestamp();
+	} else {
+		$enqueue_ver = wp_get_theme()->get( 'Version' );
+	}
+
+	// enqueue script
+	wp_enqueue_script('mvc-js', content_url() . '/mvc_app/js/mvc_scripts.js', array (), $enqueue_ver , false );
+}
+
+add_action( 'wp_enqueue_scripts', 'mvc_enqueue_scripts' );
