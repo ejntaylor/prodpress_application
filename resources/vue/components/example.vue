@@ -1,11 +1,12 @@
 <template lang="html">
 
-<div>
-<p>Message text is here</p>
+    <div>
+     <p>Message text is here</p>
 
-</div>
+    </div>
 
 </template>
 
 
 <script></script>
+<style></style>
