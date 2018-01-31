@@ -55,7 +55,7 @@ function mvc_enqueue_scripts() {
 	}
 
 	// enqueue script
-	wp_enqueue_script('mvc-js', content_url() . '/mvc_app/js/mvc_scripts.js', array (), $enqueue_ver , false );
+	wp_enqueue_script('mvc-js', content_url() . '/mvc_app/resources/js/mvc_scripts.js', array (), $enqueue_ver , false );
 }
 
 add_action( 'wp_enqueue_scripts', 'mvc_enqueue_scripts' );
