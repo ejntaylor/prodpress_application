@@ -12,20 +12,12 @@
 
 <script>
 
-	// get vars from controller
-	var data = <?= json_encode($data) ?>
-
 	// create vue instance
 	var vm = new Vue({
 		el: '#app',
-		data: data
+		data: data // <- passed from controller
 	})
-
-	// example: two methods to access data. Both reactive.
-	console.dir(data.welcome_message);
-	console.dir(vm.welcome_message);
-
-
+	
 
 </script>
 

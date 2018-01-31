@@ -13,4 +13,8 @@
 	<p>A custom path for the mvc application can be set in your wp-config.php file using:</p>
 	<p><pre>define('MVC_PATH', 'app');</pre></p>
 
+	<h3>Theme</h3>
+	<p>MVC App works with any theme. You will need to setup wrappers to work with your theme. Have a look at your themes index.php file. Find the wrappers there and add to the <em>views/wrappers</em> folder.</p>
+
+
 </div>

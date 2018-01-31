@@ -45,6 +45,7 @@ class examples extends mvc_app_controller {
 		//load the view
 		get_header();
 		$this->load_view('wrappers/wrapper_start');
+		$this->load_view('base/vue', $data);
 		$this->load_view('examples/vue', $data);
 		$this->load_view('wrappers/wrapper_end');
 		get_footer();
