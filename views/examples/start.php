@@ -5,8 +5,8 @@
 
 	<p>This is an example of a page added using the config.php url router.</p>
 	<p>You can also access the MVC pages via a direct URL. For example: </p>
-	<p>🔗  <a target="_blank" href="/<?= $app_root?>/?mvc_app_route=welcome/test"><?= $domain ?>/<?= $app_root?>/?mvc_app_route=welcome/test</a></p>
-	<p>🔗  <a target="_blank" href="/<?= $app_root?>/?mvc_app_route=welcome/vue"><?= $domain ?>/<?= $app_root?>/?mvc_app_route=welcome/vue</a></p>
+	<p>🔗  <a target="_blank" href="/<?= $app_root?>/?mvc_app_route=examples/vue"><?= $domain ?>/<?= $app_root?>/?mvc_app_route=examples/vue</a></p>
+	<p>🔗  <a target="_blank" href="/<?= $app_root?>/?mvc_app_route=examples/test"><?= $domain ?>/<?= $app_root?>/?mvc_app_route=examples/test</a></p>
 	<p>🔗  <a target="_blank" href="/custom"><?= $domain ?>/custom</a></p>
 
 	<h3>Settings</h3>
@@ -40,7 +40,6 @@
 </div>
 
 
-<script src="https://sh2.local/wp-content/mvc_app/js/mvc_scripts.js"></script>
 
 <script>
 

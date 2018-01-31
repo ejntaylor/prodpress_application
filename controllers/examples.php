@@ -1,34 +1,29 @@
 <?
 
-
-class welcome extends mvc_app_controller {
-
-	// function that run by default when methods in this class are called
+class examples extends mvc_app_controller {
 
 	function __construct() {
 
 		parent::__construct();
 
-
 	}
-
-
-
-	//  default method
 
 
 
 	function default() {
 
 			// set vars
-			$data['domain'] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$data['domain'] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[SERVER_NAME]";
+			$data['app_root'] = MVC_PATH;
 
-			// load the view
+			// output
 			get_header();
 			$this->load_view('wrappers/wrapper_start');
-			$this->load_view('welcome', $data);
+			$this->load_view('examples/start', $data);
 			$this->load_view('wrappers/wrapper_end');
 			get_footer();
+
+			exit();
 
 		}
 
@@ -36,6 +31,8 @@ class welcome extends mvc_app_controller {
 	function test() {
 
 		echo 'Test Function';
+
+		exit();
 
 	}
 
@@ -52,11 +49,23 @@ class welcome extends mvc_app_controller {
 		//load the view
 		get_header();
 		$this->load_view('wrappers/wrapper_start');
-		$this->load_view('vue', $data);
+		$this->load_view('examples/vue', $data);
 		$this->load_view('wrappers/wrapper_end');
 		get_footer();
 
+		exit();
+
+
 
 	}
+
+function custom() {
+	// load the view
+	get_header();
+	$this->load_view('wrappers/wrapper_start');
+	$this->load_view('examples/custom');
+	$this->load_view('wrappers/wrapper_end');
+	get_footer();
+}
 
 }
