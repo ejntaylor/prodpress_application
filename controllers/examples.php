@@ -15,6 +15,7 @@ class examples extends mvc_app_controller {
 			// set vars
 			$data['domain'] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[SERVER_NAME]";
 			$data['app_root'] = MVC_PATH;
+			$data['mvc_root'] = content_url('mvc_app');
 
 			// output
 			get_header();
@@ -39,7 +40,7 @@ class examples extends mvc_app_controller {
 		$data['variable_one'] = 1;
 		$data['variable_two'] = 2;
 		$data['welcome_message'] = 'Welcome to the MVC vue.js application';
-		$data['welcome_description'] = 'You can use a variable direct from the data object too.';
+		$data['welcome_description'] = 'You can use a variable direct from the data object too. These are dynamic.';
 
 
 		//load the view
