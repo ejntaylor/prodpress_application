@@ -26,7 +26,6 @@
 			<img height="80" width="80" src="<?= $mvc_root?>/resources/assets/images/examples/logo_angular.svg" alt="" />
 
 		</p>
-		<p>Or just good old </p>
 	</div>
 
 	<div style="clear:left; margin-bottom: 100px;"></div>
@@ -39,6 +38,9 @@
 	<p>🔗  <a target="_blank" href="/custom"><?= $domain ?>/custom</a></p>
 
 	<p>You can also set custom urls in the file <em>config.php</em> where we can control the url router. This page is an example. The url <em>/mvc-welcome/</em>.</p>
+
+	<p>👉 <a href="">Learn more on our website.</a></p>
+
 
 
 	<hr>
