@@ -17,8 +17,12 @@ class examples extends mvc_app_controller {
 			$data['app_root'] = MVC_PATH;
 			$data['mvc_root'] = content_url('mvc_app');
 
+			// load wp admin bar
+			do_action( 'template_redirect' );
+
 			// output
 			get_header();
+
 			$this->load_view('wrappers/wrapper_start');
 			$this->load_view('examples/welcome', $data);
 			$this->load_view('wrappers/wrapper_end');
@@ -41,7 +45,6 @@ class examples extends mvc_app_controller {
 		$data['variable_two'] = 2;
 		$data['welcome_message'] = 'Welcome to the MVC vue.js application';
 		$data['welcome_description'] = 'You can use a variable direct from the data object too. These are dynamic.';
-
 
 		//load the view
 		get_header();
