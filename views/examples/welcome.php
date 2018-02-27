@@ -3,11 +3,12 @@
 
 	<div style="width:60%; float: left;">
 
-		<h1><strong>Frame</strong> is an MVC framework that works with any WordPress theme.</h1>
+		<h1><strong>Frame</strong> is an MVC framework for building applications that work with any WordPress theme.</h1>
 		<br />
-		<p>🐘 Build with a scalable PHP Backend using with <strong>Frame</strong> and <strong>WordPress</strong>.</p>
+		<p>🐘 Use <strong>MVC</strong> with <strong>WP</strong> together to build scalable and complex PHP applications.</p>
+		<p>⚡️ Front-end agnostic. Build how you want, from vanilla to reactive.</p>
 		<p>👉 URL router for easy for easy custom URLs in your app.</p>
-		<p>🔌 Create your own API for use anywhere.</p>
+		<p>🔌 Create your own API and use it anywhere.</p>
 		<p><img height="32" width="32" src="<?= $mvc_root?>/resources/assets/images/examples/logo_npm.svg" alt="" /> Use npm dependency manager to look after your libraries.</p>
 		<p><img height="32" width="32" src="<?= $mvc_root?>/resources/assets/images/examples/logo_gulp.svg" alt="" /> Gulp pre-processing makes automating your jobs a breeze.</p>
 	</div>
