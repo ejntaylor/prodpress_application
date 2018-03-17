@@ -7,42 +7,49 @@
 
 
 // routes
-
-function mvc_api_routes() {
-
-	//explode the url
-	$slugs = explode('/', $_SERVER['REQUEST_URI']);
-
-
-	//   /home
-
-	if ($slugs[1] == 'custom') {
-
-		// load the events controller
-		mvc_app('examples/custom');
-
-		exit();
-	}
-
-	//   /home
-
-	if ($slugs[1] == 'mvc-welcome') {
-
-		// load the events controller
-		mvc_app('examples');
-
-		exit();
-	}
-
-
-
-}
-add_action( 'init', 'mvc_api_routes' );
-
-
+//
+//function mvc_api_routes() {
+//
+//	//explode the url
+//	$slugs = explode('/', $_SERVER['REQUEST_URI']);
+//
+//
+//	//   /home
+//
+//	if ($slugs[1] == 'custom') {
+//
+//		// load the events controller
+//		mvc_app('examples/custom');
+//
+//		exit();
+//	}
+//
+//	//   /home
+//
+//	if ($slugs[1] == 'mvc-welcome') {
+//
+//		// load the events controller
+//		mvc_app('examples');
+//
+//		exit();
+//	}
+//
+//
+//
+//}
+//add_action( 'init', 'mvc_api_routes' );
 
 
-// enqueue mvc script
+/**
+ * Modules
+ */
+
+include( ABSPATH . 'wp-content/mvc_app/modules/examples/config/config.php');
+
+
+/**
+ * Enqueue mvc script
+ */
 
 function mvc_enqueue_scripts() {
 
