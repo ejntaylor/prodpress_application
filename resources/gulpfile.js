@@ -34,9 +34,6 @@ function swallowError(self, error) {
 gulp.task('scripts', function() {
     var scripts = [
 
-        // Vue.js
-        basePaths.dev + 'js/vue/vue.js',
-
         // MVC App JS
         basePaths.js + 'app.js',
 
@@ -69,9 +66,8 @@ gulp.task('clean-source', function () {
 // Copy all Bootstrap JS files
 gulp.task('copy-assets', function() {
 
-    // Copy Vue Assets
-    gulp.src(basePaths.node + 'vue/dist/*.js')
-        .pipe(gulp.dest(basePaths.dev + 'js/vue/'));
+
+
 
 });
 
