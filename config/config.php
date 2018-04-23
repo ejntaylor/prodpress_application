@@ -1,14 +1,16 @@
 <?
 
-// constants
+/**
+ * Define App Route
+ */
+define('PP_SLUG', 'app');
 
-//define("APP_ROOT", "/mvc/");
 
+/**
+ * Routing
+ */
 
-
-// routes
-
-function mvc_api_routes() {
+function pp_api_routes() {
 
 	//explode the url
 	$slugs = explode('/', $_SERVER['REQUEST_URI']);
@@ -19,17 +21,17 @@ function mvc_api_routes() {
 	if ($slugs[1] == 'custom') {
 
 		// load the events controller
-		mvc_app('examples/custom');
+		pp_app('examples/custom');
 
 		exit();
 	}
 
 	//   /home
 
-	if ($slugs[1] == 'mvc-welcome') {
+	if ($slugs[1] == 'prodpress-welcome') {
 
 		// load the events controller
-		mvc_app('examples');
+		pp_app('examples');
 
 		exit();
 	}
@@ -37,28 +39,31 @@ function mvc_api_routes() {
 
 
 }
-add_action( 'init', 'mvc_api_routes' );
+add_action( 'init', 'pp_api_routes' );
 
 
 
 
-// enqueue mvc script
+/**
+ * Enqueue JS
+ * @return null
+ */
 
-function mvc_enqueue_scripts() {
+
+function pp_enqueue_scripts() {
 
 	// set debug version
 	if (true == WP_DEBUG) {
 		$date = new DateTime();
 		$enqueue_ver = $date->getTimestamp();
-		$script = 'mvc_scripts';
+		$script = 'prodpress_scripts';
 	} else {
 		$enqueue_ver = wp_get_theme()->get( 'Version' );
-		$script = 'mvc_scripts.min';
+		$script = 'prodpress_scripts.min';
 
 	}
 
-	// enqueue script
-	wp_enqueue_script('mvc-js', content_url() . '/mvc_app/resources/js/' . $script . '.js', array (), $enqueue_ver , false );
+	wp_enqueue_script('prodpress-js', content_url() . '/pp_app/resources/js/' . $script . '.js', array (), $enqueue_ver , false );
 }
 
-add_action( 'wp_enqueue_scripts', 'mvc_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'pp_enqueue_scripts' );

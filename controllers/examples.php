@@ -1,6 +1,6 @@
 <?
 
-class examples extends mvc_app_controller {
+class examples extends pp_app_controller {
 
 	function __construct() {
 
@@ -14,8 +14,8 @@ class examples extends mvc_app_controller {
 
 			// set vars
 			$data['domain'] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[SERVER_NAME]";
-			$data['app_root'] = MVC_PATH;
-			$data['mvc_root'] = content_url('mvc_app');
+			$data['app_root'] = PP_SLUG;
+			$data['mvc_root'] = content_url('pp_app');
 
 			// load wp admin bar
 			do_action( 'template_redirect' );
