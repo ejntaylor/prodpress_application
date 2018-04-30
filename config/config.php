@@ -7,39 +7,24 @@ define('PP_SLUG', 'app');
 
 
 /**
- * Routing
+ * Custom Routing
  */
 
-function pp_api_routes() {
+function pp_api_custom_routes() {
 
-	//explode the url
-	$slugs = explode('/', $_SERVER['REQUEST_URI']);
+	// set custom urls to controller method
+	$custom_routes = array(
+			'custom' => 'examples/custom',
+			'vue' => 'examples/vue',
+			'prodpress-welcome' => 'examples'
+	);
 
-
-	//   /home
-
-	if ($slugs[1] == 'custom') {
-
-		// load the events controller
-		pp_app('examples/custom');
-
-		exit();
-	}
-
-	//   /home
-
-	if ($slugs[1] == 'prodpress-welcome') {
-
-		// load the events controller
-		pp_app('examples');
-
-		exit();
-	}
-
-
+	// setup custom routes
+	pp_api_custom_routes_process($custom_routes);
 
 }
-add_action( 'init', 'pp_api_routes' );
+
+add_action( 'init', 'pp_api_custom_routes', 5 );
 
 
 
