@@ -8,19 +8,21 @@
 
 		<div class="">
 			<br>
-			<p><img draggable="false" class="emoji" alt="👌" src="https://s.w.org/images/core/emoji/2.4/svg/1f44c.svg"> Free and Open Source</p>
-			<p><img draggable="false" class="emoji" alt="🐘" src="https://s.w.org/images/core/emoji/2.4/svg/1f418.svg"> Use <strong>Model View Controller (MVC)</strong> with <strong>WP</strong></p>
-			<p><img draggable="false" class="emoji" alt="⚡" src="https://s.w.org/images/core/emoji/2.4/svg/26a1.svg"> Build with any front-end, from vanilla to reactive</p>
-			<p><img draggable="false" class="emoji" alt="👉" src="https://s.w.org/images/core/emoji/2.4/svg/1f449.svg"> Simple router for custom URLs in your app</p>
-			<p><img draggable="false" class="emoji" alt="🔌" src="https://s.w.org/images/core/emoji/2.4/svg/1f50c.svg"> Create your own API and use it anywhere</p>
+			<p>👌 Free and Open Source</p>
+			<p>🐘 Use <strong>Model View Controller (MVC)</strong> with <strong>WP</strong></p>
+			<p>⚡ Build with any front-end, from vanilla to reactive</p>
+			<p>👉 Simple router for custom URLs in your app</p>
+			<p>🔌 Create your own API and use it anywhere</p>
 		</div>
 
 		<a href="//prod.press">View more on http://prod.press</a>
 
-
 	</div>
+
 	<hr style="">
+	
 	<h4>🤩  Made for WordPress developers. 🛠 Use your existing PHP and HTML skills.</h4>
+	
 	<p>Your applications pages can be automatically accessed once they are created in the controller file using the following URL format:</p>
 	<p>🔗  <em>[site url]/[app_slug]/pp_route=[controller file]/[controller method]</em>.</p>
 	<p>🔗  <a target="_blank" href="/<?= $app_root?>/?pp_route=examples/test"><?= $domain ?>/<?= $app_root?>/?pp_route=examples/test</a></p>

@@ -5,6 +5,8 @@
 
 	<hr />
 
+	<p>An example of how you can use a reactive JavaScript framework like vue.js.</p>
+	
 	<p>When you instantiate your data using Vue we can output reactive elements by wrapping them in curly brackets.</p>
 
 	<p>Please read the <a href="https://vuejs.org/v2/guide/">Vue.js guide</a> for more information.</p>

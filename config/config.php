@@ -15,8 +15,9 @@ function pp_api_custom_routes() {
 	// set custom urls to controller method
 	$custom_routes = array(
 			'custom' => 'examples/custom',
-			'vue' => 'examples/vue',
-			'prodpress-welcome' => 'examples'
+			'vue'=> 'examples/vue',
+			'prodpress-welcome'	=> 'examples',
+			'test'		=> 'examples/test'
 	);
 
 	// setup custom routes
