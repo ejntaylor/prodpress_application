@@ -1,71 +1,55 @@
 <?
 
-// constants
-
-//define("APP_ROOT", "/mvc/");
-
-
-
-// routes
-//
-//function mvc_api_routes() {
-//
-//	//explode the url
-//	$slugs = explode('/', $_SERVER['REQUEST_URI']);
-//
-//
-//	//   /home
-//
-//	if ($slugs[1] == 'custom') {
-//
-//		// load the events controller
-//		mvc_app('examples/custom');
-//
-//		exit();
-//	}
-//
-//	//   /home
-//
-//	if ($slugs[1] == 'mvc-welcome') {
-//
-//		// load the events controller
-//		mvc_app('examples');
-//
-//		exit();
-//	}
-//
-//
-//
-//}
-//add_action( 'init', 'mvc_api_routes' );
+/**
+ * Define App Route
+ */
+define('PP_SLUG', 'app');
 
 
 /**
- * Modules
+ * Custom Routing
  */
 
-include( ABSPATH . 'wp-content/mvc_app/modules/examples/config/config.php');
+function pp_api_custom_routes() {
+
+	// set custom urls to controller method
+	$custom_routes = array(
+			'custom' => 'examples/custom',
+			'vue'=> 'examples/vue',
+			'prodpress-welcome'	=> 'examples',
+			'test'		=> 'examples/test'
+	);
+
+	// setup custom routes
+	pp_api_custom_routes_process($custom_routes);
+
+}
+
+add_action( 'init', 'pp_api_custom_routes', 5 );
+
+
 
 
 /**
- * Enqueue mvc script
+ * Enqueue JS
+ * @return null
  */
 
-function mvc_enqueue_scripts() {
+
+function pp_enqueue_scripts() {
 
 	// set debug version
 	if (true == WP_DEBUG) {
 		$date = new DateTime();
 		$enqueue_ver = $date->getTimestamp();
-		$script = 'mvc_scripts';
+		$script = 'prodpress_scripts';
 	} else {
 		$enqueue_ver = wp_get_theme()->get( 'Version' );
-		$script = 'mvc_scripts.min';
+		$script = 'prodpress_scripts.min';
 
 	}
 
-	// enqueue script
-	wp_enqueue_script('mvc-js', content_url() . '/mvc_app/resources/js/' . $script . '.js', array (), $enqueue_ver , false );
+	wp_enqueue_script('prodpress-js', content_url() . '/pp_app/resources/js/' . $script . '.js', array (), $enqueue_ver , false );
 }
 
-add_action( 'wp_enqueue_scripts', 'mvc_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'pp_enqueue_scripts' );
