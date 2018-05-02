@@ -1,12 +1,15 @@
-## Example Module
+# ProdPress Module - Example Module
+Simple module to demonstrate how a ProdPress module works.
+
+## Usage
 http://site.com/example_module/example/example
+
+Outputs a test message.
 
 ## Scripts
 
-In your resources/gulpfile.js
+None.
 
 ## Dependencies
 
-npm i jquery --save
-npm i jquery-validation --save
-
+None.
