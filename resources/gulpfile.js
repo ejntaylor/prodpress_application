@@ -3,7 +3,8 @@ var basePaths = {
     js: './js/',
     node: './node_modules/',
     dev: './src/',
-    lib: './libraries/'
+    lib: './libraries/',
+    pp_modules: '../modules/'
 };
 
 
@@ -34,20 +35,34 @@ function swallowError(self, error) {
 gulp.task('scripts', function() {
     var scripts = [
 
+        // JQuery
+        basePaths.dev + '/js/jquery/jquery.js',
+
+        // JQuery Validation
+        basePaths.dev + '/js/jquery-validation/jquery.validate.js',
+
+        // Bootstrap 4
+        basePaths.dev + 'js/bootstrap4/bootstrap.js',
+
+        // PW Strength
+        basePaths.dev + '/js/pwstrength/pwstrength-bootstrap.js',
+
         // MVC App JS
         basePaths.js + 'app.js',
 
+        // Module - BS Modal Login
+        basePaths.dev + '/js/bs_modal_login/script.js',
 
     ];
     gulp.src(scripts)
-        .pipe(concat('mvc_scripts.min.js'))
+        .pipe(concat('pp_scripts.min.js'))
         .pipe(uglify().on('error', function(e){
             console.log(e);
         }))
         .pipe(gulp.dest('./js/'));
 
     gulp.src(scripts)
-        .pipe(concat('mvc_scripts.js'))
+        .pipe(concat('pp_scripts.js'))
         .pipe(gulp.dest('./js/'));
 });
 
@@ -66,8 +81,25 @@ gulp.task('clean-source', function () {
 // Copy all Bootstrap JS files
 gulp.task('copy-assets', function() {
 
+    // JQUERY
+    gulp.src(basePaths.node + '/jquery/dist/*')
+    .pipe(gulp.dest(basePaths.dev + '/js/jquery'));
 
+    // Copy all Bootstrap JS files
+    gulp.src(basePaths.node + 'bootstrap/dist/js/**/*.js')
+       .pipe(gulp.dest(basePaths.dev + '/js/bootstrap4'));
 
+    // jquery-validate
+    gulp.src(basePaths.node + '/jquery-validation/dist/*')
+    .pipe(gulp.dest(basePaths.dev + '/js/jquery-validation'));
+
+    // JQuery Password Meter
+    gulp.src(basePaths.node + 'pwstrength-bootstrap/dist/*.js')
+        .pipe(gulp.dest(basePaths.dev + '/js/pwstrength'));    
+
+    // MODULE - BS Modal Login
+    gulp.src(basePaths.pp_modules + '/bs_modal_login/js/*')
+        .pipe(gulp.dest(basePaths.dev + '/js/bs_modal_login'));
 
 });
 

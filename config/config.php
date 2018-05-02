@@ -42,11 +42,10 @@ function pp_enqueue_scripts() {
 	if (true == WP_DEBUG) {
 		$date = new DateTime();
 		$enqueue_ver = $date->getTimestamp();
-		$script = 'prodpress_scripts';
+		$script = 'pp_scripts';
 	} else {
 		$enqueue_ver = wp_get_theme()->get( 'Version' );
-		$script = 'prodpress_scripts.min';
-
+		$script = 'pp_scripts.min';
 	}
 
 	wp_enqueue_script('prodpress-js', content_url() . '/pp_app/resources/js/' . $script . '.js', array (), $enqueue_ver , false );
