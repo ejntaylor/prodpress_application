@@ -1,0 +1,19 @@
+{
+  "name": "bs_modal_login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test",
+    "postinstall": "rsync -r ./node_modules ../../resources/ && rm -rf ./node_modules"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap4": "0.0.1-security",
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-validation": "^1.17.0",
+    "pwstrength-bootstrap": "^2.2.1"
+  }
+}
