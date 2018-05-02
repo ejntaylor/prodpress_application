@@ -1,10 +1,10 @@
-# WP MVC Application Starter
+# ProdPress Application Starter
 
-WP MVC is a Model View Controller Framework for building scalable applications with WordPress. Install this as a plugin to get started.
+ProdPress is a Model View Controller Framework for building scalable applications with WordPress. Use this starter application alongside the ProdPress plugin to get started.
 
 ## Getting Started
 
-You will need to use this starter application in conjunction with the [MVC Framework plugin](https://github.com/raisonon/wp-mvc)..
+You will need to use this starter application in conjunction with the [ProdPress plugin](https://github.com/raisonon/prodpress)..
 
 
 ## Contributing
@@ -20,7 +20,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Hazlitt Eastman**
 * **Elliot Taylor**
 
-See also the list of [contributors](https://github.com/raisonon/wp-mvc/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/raisonon/prodpress/contributors) who participated in this project.
 
 ## License
 
