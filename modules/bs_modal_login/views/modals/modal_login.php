@@ -15,7 +15,7 @@
 
 					<div class="reg-panel-1">
 
-						<h3>Join SimpleHours</h3>
+						<h3>Join</h3>
 
 						<form id="ajaxregister" action="" method="post" class="login-form col-10 offset-1">
 
@@ -50,17 +50,13 @@
 								<div class="col-12">Use upper and lower case letters, numbers and punctation</div>
 							</div>
 
-							<input type="hidden" id="security-login" name="security-login" :value="nonce">
+						<input type="hidden" id="security-login" name="security-login" value="<?= $nonce_login ?>">
 
 							<div class="text-center">
 								<button class="btn btn-primary" name="submit" type="submit" value="Register">Join</button>
 							</div>
 
 						</form>
-					</div>
-
-					<div class="reg-panel-2 d-none">
-						Test
 					</div>
 
 				</div>
@@ -82,9 +78,9 @@
 
 				<div class="modal-body pt-0">
 
-					<h3 class="modal-title pb-3" id="">aaLog in to Simplehours</h3>
+					<h3 class="modal-title pb-3" id="">Log in</h3>
 
-					<div id="ajaxlogin" class="login-form col-10 offset-1">
+					<form id="ajaxlogin" class="login-form col-10 offset-1">
 
 						<div class="status alert alert-warning d-none" role="alert"></div>
 
@@ -103,10 +99,10 @@
 							<button v-on:click="login" type="submit" class="btn btn-primary" value="<?php _e('Login', 'mtp') ?>"><?php _e('Log in', 'mtp') ?></button>
 						</div>
 
-						<input type="hidden" id="security-register" name="security-login" :value="nonce">
+						<input type="hidden" id="security-register" name="security-login" value="<?= $nonce_login ?>">
 
 
-					</div>
+					</form>
 
 
 					<div class="text-center p-3">Don't have an account?<a href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalRegister" data-dismiss="modal"><?php _e('Join the community. Its free!', 'mtp'); ?></a></div>
@@ -146,7 +142,7 @@
 							<button type="submit" class="btn btn-primary" value="<?php _e('Recover', 'mtp') ?>"><?php _e('Recover', 'mtp') ?></button>
 						</div>
 
-						<input type="hidden" id="ajax-password-nonce" name="ajax-password-nonce" :value="nonce"">
+						<input type="hidden" id="ajax-password-nonce" name="ajax-password-nonce" value="<?= $nonce_password ?>">
 
 					</form>
 

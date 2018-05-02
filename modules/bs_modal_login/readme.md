@@ -17,6 +17,11 @@ This module requires the following Node Package Modules (npm):
 * PWStrength
 * Bootstrap JS
 
-These should be added to the Gulpfile.js so assets can be copied (gulp copy-assets) and then added to the main application JS (gulp scripts)
+eg. 
+npm i jquery --save
+npm i jquery-validation --save
+
+Then these should be added to the Gulpfile.js so assets can be copied (gulp copy-assets) and then added to the main application JS (gulp scripts)
+
 
 

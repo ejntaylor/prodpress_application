@@ -51,7 +51,7 @@ gulp.task('scripts', function() {
         basePaths.js + 'app.js',
 
         // Module - BS Modal Login
-        basePaths.dev + '/js/bs_modal_login/script.js',
+        basePaths.pp_modules + '/bs_modal_login/js/script.js',
 
     ];
     gulp.src(scripts)
@@ -97,10 +97,7 @@ gulp.task('copy-assets', function() {
     gulp.src(basePaths.node + 'pwstrength-bootstrap/dist/*.js')
         .pipe(gulp.dest(basePaths.dev + '/js/pwstrength'));    
 
-    // MODULE - BS Modal Login
-    gulp.src(basePaths.pp_modules + '/bs_modal_login/js/*')
-        .pipe(gulp.dest(basePaths.dev + '/js/bs_modal_login'));
-
+   
 });
 
 

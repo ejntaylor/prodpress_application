@@ -16891,6 +16891,9 @@ jQuery(function($) {
 
     var initAjax = function() {
 
+        var submittingmessage = 'Submitting...';
+        var loadingmessage = 'Loading...';
+        var redirecturl = '/';
 
         // Ajax Function for Logging In
 
@@ -16898,7 +16901,7 @@ jQuery(function($) {
 
             // remove status
             var status = $("#modalLogin .status");
-            status.removeClass('d-none').html(ajax_object.loadingmessage);
+            status.removeClass('d-none').html(loadingmessage);
 
             // set vars
             var username = $(form+' input[name=username]').val(),
@@ -16929,7 +16932,7 @@ jQuery(function($) {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: '/members/mvc_api/?mvc_app_route=profile/login_callback',
+                url: '/bs_modal_login/profile/login_callback',
                 data: {
                     'username': username,
                     'password': password,
@@ -16945,10 +16948,11 @@ jQuery(function($) {
                     // amend status
                     var status = $("#modalLogin .status");
 
-
                     status.html(data.message);
+
+                    // redirect
                     if (data.loggedin == true){
-                        document.location.href = ajax_object.redirecturl; ;
+                        document.location.href = data.redirecturl;
                     }
                 },
 
@@ -17016,16 +17020,17 @@ jQuery(function($) {
 
             submitHandler: function(form) {
 
+                // vars
                 var status = $('#modalRegister .status');
 
 
                 // submit via ajax
-                status.removeClass('d-none').html(ajax_object.submittingmessage);
+                status.removeClass('d-none').html(submittingmessage);
 
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
-                    url: '/members/mvc_api/?mvc_app_route=profile/register_callback',
+                    url: '/bs_modal_login/profile/register_callback',
                     data: {
                         'email': $('form#ajaxregister input[name=username]').val(),
                         'password': $('form#ajaxregister input[name=password]').val(),
@@ -17156,12 +17161,12 @@ jQuery(function($) {
 
 
                 // submit via ajax
-                status.removeClass('d-none').html(ajax_object.submittingmessage);
+                status.removeClass('d-none').html(submittingmessage);
 
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
-                    url: '/members/mvc_api/?mvc_app_route=profile/ajax_forgotten_password',
+                    url: '/bs_modal_login/profile/ajax_forgotten_password',
                     data: {
                         'username': $('form#ajaxforgottenpass input[name=user_login]').val(),
                         'nonce': $('form#ajaxforgottenpass input[name=ajax-password-nonce]').val()
@@ -17226,7 +17231,7 @@ jQuery(function($) {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: '/members/mvc_api/?mvc_app_route=profile/reset_pass_callback',
+                url: '/bs_modal_login/profile/reset_pass_callback',
                 data: data,
 
                 success: function(data, loginvar, pass1var){

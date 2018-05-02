@@ -11,25 +11,43 @@ class bs_modal_login extends pp_app_controller {
 
 		$this->load_helper( 'session' );
 		$this->load_helper( 'security' );
+		$this->load_model( 'users_model' );
 	}
 
 
+	/*
+	 * Displays the 
+	 */
 	function example() {
 
 		get_header();
+
+		// load modals
 		$this->display_login_modal();
-		// $this->display_reset_pass_modal();
-		$this->load_view('buttons');
+		$this->display_reset_pass_modal();
+		
+		// load buttons
+		$this->buttons();
 		get_footer();
 	}
 
+	/*
+	 * Displays the buttons
+	 */
 	function buttons() {
-		// display the modal
+		if (is_user_logged_in()) { 
+			return;
+		}
+
 		$this->load_view('buttons');
 	}
 
 
 	function display_login_modal() {
+
+		if (is_user_logged_in()) {
+			return;
+		}
 
 		// get nonce
 		$data['nonce_login'] = wp_create_nonce('ajax-login-nonce');
@@ -41,6 +59,12 @@ class bs_modal_login extends pp_app_controller {
 	}
 
 	function display_reset_pass_modal() {
+
+		// conditions to continue
+		if(isset($_GET['action']) && $_GET['action']=='speaker_confirm') {
+		} else {
+			return;
+		}
 
 		// load user model
 		$this->load_model('users_model');
@@ -85,7 +109,6 @@ class bs_modal_login extends pp_app_controller {
 
 		die();
 	}
-
 
 }
 

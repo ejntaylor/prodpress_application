@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-    console.log('BS Module JS Loaded');
+    console.log('BS Module JS Loadeda');
 
     var init = function() {
 
@@ -20,6 +20,9 @@ jQuery(function($) {
 
     var initAjax = function() {
 
+        var submittingmessage = 'Submitting...';
+        var loadingmessage = 'Loading...';
+        var redirecturl = '/';
 
         // Ajax Function for Logging In
 
@@ -27,7 +30,7 @@ jQuery(function($) {
 
             // remove status
             var status = $("#modalLogin .status");
-            status.removeClass('d-none').html(ajax_object.loadingmessage);
+            status.removeClass('d-none').html(loadingmessage);
 
             // set vars
             var username = $(form+' input[name=username]').val(),
@@ -77,7 +80,7 @@ jQuery(function($) {
 
                     status.html(data.message);
                     if (data.loggedin == true){
-                        document.location.href = ajax_object.redirecturl; ;
+                        document.location.href = redirecturl; ;
                     }
                 },
 
@@ -145,11 +148,12 @@ jQuery(function($) {
 
             submitHandler: function(form) {
 
+                // vars
                 var status = $('#modalRegister .status');
 
 
                 // submit via ajax
-                status.removeClass('d-none').html(ajax_object.submittingmessage);
+                status.removeClass('d-none').html(submittingmessage);
 
                 $.ajax({
                     type: 'POST',
@@ -285,7 +289,7 @@ jQuery(function($) {
 
 
                 // submit via ajax
-                status.removeClass('d-none').html(ajax_object.submittingmessage);
+                status.removeClass('d-none').html(submittingmessage);
 
                 $.ajax({
                     type: 'POST',
@@ -355,7 +359,7 @@ jQuery(function($) {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: '/members/mvc_api/?mvc_app_route=profile/reset_pass_callback',
+                url: 'bs_modal_login/profile/reset_pass_callback',
                 data: data,
 
                 success: function(data, loginvar, pass1var){
