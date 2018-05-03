@@ -269,7 +269,7 @@
 				$this->email->email_sender($subject, $message_file, $data, $to);
 
 				// output message
-				echo wp_send_json(array('error' => false, 'message'=> __('Register successful, logging you in.', 'mtp')));
+				echo wp_send_json(array('error' => false, 'message'=> __('Register successful, logging you in.', 'bs_modal_login')));
 
 			}
 
@@ -280,22 +280,6 @@
 
 
 
-
-
-		// ajax - modal loggedin update profile
-
-		function update_profile_callback() {
-
-			$arr = array('mtp_job_title','mtp_company','mtp_join_reason');
-
-			// loop through the user_meta items and update
-			foreach ($arr as $a) {
-				if (isset($_POST[$a])) {
-					update_user_meta( get_current_user_id(), $a, sanitize_text_field($_POST[$a]) );
-				}
-			}
-
-		}
 
 
 
@@ -385,7 +369,7 @@
 
 			$subject = 'ADMIN: Delete Account Request';
 			$message_file = 'account_delete';
-			$to = 'feedback@mindtheproduct.com';
+			$to = 'your@email.com';
 
 			// Send Email
 			$this->email->email_sender($subject, $message_file, $data, $to);
@@ -417,7 +401,7 @@
 
 			// check not deleted role
 			if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'deleted', $user->roles ) ) {
-				$user = new WP_Error( 'deleted', __( "This account has been deleted", "mtp" ) );
+				$user = new WP_Error( 'deleted', __( "This account has been deleted", "bs_modal_login" ) );
 			} else {
 				// sign user in
 				$user = wp_signon( $credentials, false );

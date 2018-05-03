@@ -169,6 +169,8 @@ jQuery(function($) {
 
                     success: function(data){
 
+                        console.dir(data);
+
                         // Display Status Message
                         status.removeClass('d-none').html(data.message);
 

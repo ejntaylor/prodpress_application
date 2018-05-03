@@ -7,7 +7,6 @@
 			parent::__construct();
 		}
 
-
 		/**
 		 * Returns the Email Header
 		 *
@@ -18,9 +17,8 @@
 
 		function header($header) {
 			
-			$header_path = ABSPATH . 'wp-content/mvc_app/views/' . $header . '.php';
-			
-			
+			$header_path = $this->get_view_path($header);
+
 			ob_start();
 			include($header_path);
 			$html = ob_get_clean();
@@ -46,8 +44,8 @@
 				extract($data);
 			}
 			
-			$body_path = ABSPATH . 'wp-content/mvc_app/views/' . $body . '.php';
-			
+			$body_path = $this->get_view_path($body);
+
 			ob_start();
 			include($body_path);
 			$html = ob_get_clean();
@@ -68,8 +66,8 @@
 
 		function footer($footer) {
 			
-			$footer_path = ABSPATH . 'wp-content/mvc_app/views/' . $footer . '.php';
-			
+			$footer_path = $this->get_view_path($footer);
+
 			ob_start();
 			include($footer_path);
 			$html = ob_get_clean();
@@ -105,6 +103,13 @@
 			// headers
 			$headers = "MIME-Version: 1.0";
 			$headers .= "Content-Type: text/html; charset=UTF-8";
+
+			// set to html
+			function wpdocs_set_html_mail_content_type() {
+				return 'text/html';
+			}
+	
+			add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 
 			//send the message
 			wp_mail( $to, $subject, $message, $headers );

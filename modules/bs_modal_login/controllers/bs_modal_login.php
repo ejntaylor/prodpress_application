@@ -29,6 +29,8 @@ class bs_modal_login extends pp_app_controller {
 		// set data
 		$data['logout_link'] = $this->users_model->logout_link();
 		
+		$this->load_helper('email');
+
 		// load buttons
 		if (is_user_logged_in()) { 
 			$this->load_view('buttons_logout', $data);

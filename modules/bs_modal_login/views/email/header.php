@@ -90,14 +90,14 @@
     
     <tr>
         <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">&nbsp;</td>
-        <td class="container" style="background-color: #3f3f3f;    border-top: 8px solid #1fa7e0;font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; Margin: 0 auto; max-width: 580px; padding: 0px; width: 580px;">
+        <td class="container" style="background-color: lightblue;    border-top: 8px solid lightblue;font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; Margin: 0 auto; max-width: 580px; padding: 0px; width: 580px;">
           <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 0px;">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Mind The Product</span>
+            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Your Product Email</span>
             <table class="main" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;background: #3f3f3f;">
    <tbody> <tr>
-        <td style="padding:5px;"><img src="https://3lsqjy1sj7i027fcn749gutj-wpengine.netdna-ssl.com/wp-content/themes/bs_modal_login/assets/img/logo@2x.png" style="height:45px;">
+        <td style="padding:5px;">
        </td>
        </tr>
     </tbody>
