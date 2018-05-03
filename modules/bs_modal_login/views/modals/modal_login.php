@@ -96,7 +96,7 @@
 						</div>
 
 						<div class="text-center">
-							<button v-on:click="login" type="submit" class="btn btn-primary" value="<?php _e('Login', 'mtp') ?>"><?php _e('Log in', 'mtp') ?></button>
+							<button v-on:click="login" type="submit" class="btn btn-primary" value="<?php _e('Login', 'bs_modal_login') ?>"><?php _e('Log in', 'bs_modal_login') ?></button>
 						</div>
 
 						<input type="hidden" id="security-register" name="security-login" value="<?= $nonce_login ?>">
@@ -105,8 +105,8 @@
 					</form>
 
 
-					<div class="text-center p-3">Don't have an account?<a href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalRegister" data-dismiss="modal"><?php _e('Join the community. Its free!', 'mtp'); ?></a></div>
-					<a class="lost small" href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalForgottenPass" data-dismiss="modal"><?php _e('Lost your password?' , 'mtp'); ?></a>
+					<div class="text-center p-3">Don't have an account?<a href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalRegister" data-dismiss="modal"><?php _e('Join! Its free!', 'bs_modal_login'); ?></a></div>
+					<a class="lost small" href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalForgottenPass" data-dismiss="modal"><?php _e('Lost your password?' , 'bs_modal_login'); ?></a>
 
 				</div>
 			</div>
@@ -139,7 +139,7 @@
 						</div>
 
 						<div class="text-center">
-							<button type="submit" class="btn btn-primary" value="<?php _e('Recover', 'mtp') ?>"><?php _e('Recover', 'mtp') ?></button>
+							<button type="submit" class="btn btn-primary" value="<?php _e('Recover', 'bs_modal_login') ?>"><?php _e('Recover', 'bs_modal_login') ?></button>
 						</div>
 
 						<input type="hidden" id="ajax-password-nonce" name="ajax-password-nonce" value="<?= $nonce_password ?>">
@@ -147,8 +147,8 @@
 					</form>
 
 
-					<div class="text-center">Don't have an account?<a href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalRegister" data-dismiss="modal"><?php _e('Join the community. Its free!', 'mtp'); ?></a></div>
-					<a class="lost small" href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalLogin" data-dismiss="modal"><?php _e('Login instead?' , 'mtp'); ?></a>
+					<div class="text-center">Don't have an account?<a href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalRegister" data-dismiss="modal"><?php _e('Join here.', 'bs_modal_login'); ?></a></div>
+					<a class="lost small" href="javascript:void(0)" class="btn-register" data-toggle="modal" data-target="#modalLogin" data-dismiss="modal"><?php _e('Login instead?' , 'bs_modal_login'); ?></a>
 
 				</div>
 			</div>
