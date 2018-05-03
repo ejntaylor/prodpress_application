@@ -25,21 +25,46 @@ class bs_modal_login extends pp_app_controller {
 		// load modals
 		$this->display_login_modal();
 		$this->display_reset_pass_modal();
+
+		// set data
+		$data['logout_link'] = $this->users_model->logout_link();
 		
 		// load buttons
-		$this->buttons();
+		if (is_user_logged_in()) { 
+			$this->load_view('buttons_logout', $data);
+		} else {
+			$this->load_view('buttons_login');
+		}
+
+		// get footer
 		get_footer();
 	}
 
 	/*
 	 * Displays the buttons
 	 */
-	function buttons() {
+	function buttons_login() {
+
+		// check logged in
+		if (!is_user_logged_in()) { 
+			return;
+		}
+
+		$this->load_view('buttons_login');
+	}
+
+	/*
+	 * Buttons Logout
+	 */
+
+	function buttons_logout() {
+
+		// check logged in
 		if (is_user_logged_in()) { 
 			return;
 		}
 
-		$this->load_view('buttons');
+		$this->load_view('buttons_logout');
 	}
 
 

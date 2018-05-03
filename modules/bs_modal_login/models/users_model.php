@@ -65,6 +65,16 @@ class users_model extends pp_app_model {
 
 		}
 
+		/*
+		 * Fetches WP Logout Button
+		 *
+		 * @return string logout button;
+		 */
+
+		function logout_link() {
+			return wp_logout_url('/bs_modal_login/bs_modal_login/example');
+		}
+
 }
 
 ?>
